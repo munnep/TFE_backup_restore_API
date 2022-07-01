@@ -1,6 +1,6 @@
 # TFE_backup_restore_API
 
-This repository describes how to de a backup and restore from your TFE environment using the backup and API. The repository steps are mainly based on the following official documentation found [here](https://www.terraform.io/enterprise/admin/infrastructure/backup-restore)
+This repository describes how to do a backup and restore from your TFE environment using the backup and restore API. The repository steps are mainly based on the following official documentation found [here](https://www.terraform.io/enterprise/admin/infrastructure/backup-restore)
 
 These same procedures can be used to migrate from a TFE with mounted disk to TFE external services which is in the example of this repo
 
@@ -25,9 +25,8 @@ cd TFE_backup_restore_API
 - Create the TFE mounted disk installation environment using the repo [https://github.com/munnep/TFE_aws_disk](https://github.com/munnep/TFE_aws_disk)
 - On the TFE environment generate an organization, workspace, users everything you like and that you can check after a restore. 
 - Get the Backup API token from the Terraform Enterprise dashboard under settings
-- 
 ```
-4355a63556b400097d4e247fb6366484c197ae86a8994b29c15a60164340116e
+4255a63556b400097d4e247fb6366484c197ae86a8994b29c15a60164340116e
 ```
 - create a payload with an encryption password for the file. See `payload.json` for an example
 
@@ -40,7 +39,7 @@ cd TFE_backup_restore_API
 - create a backup as follow. Change the URL to your own TFE environment
 
 ```
-export TOKEN=4355a63556b400097d4e247fb6366484c197ae86a8994b29c15a60164340116e
+export TOKEN=4255a63556b400097d4e247fb6366484c197ae86a8994b29c15a60164340116e
 curl \
   --header "Authorization: Bearer $TOKEN" \
   --request POST \
@@ -68,7 +67,7 @@ output: you don't get any output from the above command. Just a return to your p
 }
 ```
 
-- restore the backup into you new TFE environment
+- restore the backup into your new TFE environment
 
 ```
 export TOKEN=4355a63556b400097d4e247fb6366484c197ae86a8994b29c15a60164340116e
