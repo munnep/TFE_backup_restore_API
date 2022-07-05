@@ -1,4 +1,4 @@
-# TFE_backup_restore_API
+# tfe_backup_restore_api
 
 This repository describes how to do a backup and restore from your TFE environment using the backup and restore API. The repository steps are mainly based on the following official documentation found [here](https://www.terraform.io/enterprise/admin/infrastructure/backup-restore)
 
@@ -49,11 +49,11 @@ The repo assumes you have no certificates and want to create them using Let's En
 
 - Clone the repository to your local machine
 ```
-git clone https://github.com/munnep/TFE_backup_restore_API.git
+git clone https://github.com/munnep/tfe_backup_restore_api.git
 ```
 - Go to the directory
 ```
-cd TFE_backup_restore_API
+cd tfe_backup_restore_api
 ```
 - Set your AWS credentials
 ```
