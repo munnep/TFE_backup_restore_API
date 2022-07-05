@@ -56,14 +56,14 @@ git clone https://github.com/munnep/tfe_backup_restore_api.git
 cd tfe_backup_restore_api
 ```
 - Set your AWS credentials
-```
+```sh
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 export AWS_SESSION_TOKEN=
 ```
 - Store the files needed for the TFE online installation under the `./files` directory, See the notes [here](./files/README.md)
 - create a file called `variables.auto.tfvars` with the following contents and your own values
-```
+```hcl
 tag_prefix               = "patrick-tfe"                        # TAG prefix for names to easily find your AWS resources
 region                   = "eu-north-1"                         # Region to create the environment
 vpc_cidr                 = "10.234.0.0/16"                      # subnet mask that can be used 
@@ -114,10 +114,10 @@ tfe_dashboard = "https://patrick-tfe3.bg.hashicorp-success.com:8800"
 ```
 - create a backup as follow. Change the URL to your own TFE environment
 
-```
+```sh
 export TOKEN=4355a63556b400097d4e247fb6366484c197ae86a8994b29c15a60164340116e
 curl \
-  --header "Authorization: Bearer $TOKEN" \
+  --header "Authorization: Bearer ${TOKEN}" \
   --request POST \
   --data @payload.json \
   --output backup.blob \
@@ -138,16 +138,16 @@ terraform apply -replace aws_ebs_volume.tfe_docker -replace aws_ebs_volume.tfe_s
 4355a63556b400097d4e247fb6366484c197ae86a8994b29c15a60164340116e
 ```
 - Make sure you have a `payload.json` with the encryption password of the `backup.blob` file
-```
+```json
 {
     "password": "Vewyrubskjdf@#$890werjsdFSFDSdf"
 }
 ```
 - restore the backup into your new TFE environment
-```
+```sh
 export TOKEN=4355a63556b400097d4e247fb6366484c197ae86a8994b29c15a60164340116e
 curl \
-  --header "Authorization: Bearer $TOKEN" \
+  --header "Authorization: Bearer ${TOKEN}" \
   --request POST \
   --form config=@payload.json \
   --form snapshot=@backup.blob \
