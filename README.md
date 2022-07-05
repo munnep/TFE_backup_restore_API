@@ -99,7 +99,7 @@ ssh_tfe_server_ip = "ssh ubuntu@13.51.23.34"
 tfe_appplication = "https://patrick-tfe3.bg.hashicorp-success.com"
 tfe_dashboard = "https://patrick-tfe3.bg.hashicorp-success.com:8800"
 ```
-- Connect to the TFE dashboard (default password: Password#!). This could take 10 minutes before fully functioning
+- Connect to the TFE dashboard (default password: Password#1). This could take 10 minutes before fully functioning
 - Click on the open button to create your organization, workspaces users everything you like and that you can check after a restore. 
 - Get the Backup API token from the Terraform Enterprise dashboard under settings   
 ![](media/20220705090141.png)    
